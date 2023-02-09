@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;}
+        li{list-style:none;}
+        .clearfix:after{content:"";display: block;clear: both;}
+
+        /* body  */
+        .wrap{
+            width: 1000px;
+            margin: 0 auto;
+            background-color:skyblue;
+        }
+        .wrap li{
+            float: left;width: 20%;text-align: center;
+            line-height: 50px;
+        }
+        /* .wrap ul:after{content:"";display: block;clear: both;} */
+        .visual{
+            height: 500px;
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="clearfix">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+    </div>
+    <div class="visual"></div>
+</body>
+</html>
