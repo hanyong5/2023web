@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .clearfix:after{content:"";display: block;clear: both;}
+
+        .wrap{
+            width: 1000px;
+            margin: 0 auto;
+            background-color: skyblue;
+        }
+        .wrap div{
+            width: 100px;height: 100px;
+        }
+        /* .wrap:after{content:"";display: block;clear: both;} */
+        .box1{float: left;background-color:red;}
+        .box2{float: right;background-color: blue;}
+
+        .visual{
+            height: 400px;background-color:gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap clearfix">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+    </div>
+    <div class="visual"></div>
+    <div class="content">
+        <div class="sec1">1</div>
+        <div class="sec1">2</div>
+        <div class="sec1">3</div>
+    </div>
+</body>
+</html>
