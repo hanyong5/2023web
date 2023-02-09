@@ -9,28 +9,49 @@
         *{margin: 0;padding: 0;}
         a:link,
         a:visited{text-decoration: none;color:black}
+        .clearfix:after{
+            content:"";
+            display: block;
+            clear: both;
+        }
 
         div.wrap{
-            width: 500px;
-            height: 500px;
+            width:500px;
             background-color:aqua;
+            /* margin-right: auto;
+            margin-left: auto; */
+            margin: 0 auto;
         }
         div.wrap>div{
             width: 200px;
-            height: 200px;
+            height: 300px;
         }
         div.box1{
             background-color: red;
+            float: left;
         }
         div.box2{
             background-color: blue;
+            float: right;
         }
+        div.clear{
+            width: 100% !important;
+            height:0 !important;
+            clear:both;
+            background-color:gray;
+        }
+        
     </style>
 </head>
 <body>
-    <div class="wrap">
+    <div class="wrap clearfix">
         <div class="box1">1</div>
         <div class="box2">2</div>
+        <!-- <div class="clear"></div> -->
+
+        
     </div>
+    111
+ 
 </body>
 </html>
