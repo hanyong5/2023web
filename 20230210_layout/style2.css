@@ -49,3 +49,8 @@ h1.logo a{
 .menu li a:hover{
     background-color: violet;
 }
+
+.visual{
+    height:300px;
+    background: linear-gradient(90deg, #89F7FE 0%, #66A6FF 100%);
+}
