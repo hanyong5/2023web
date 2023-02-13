@@ -73,6 +73,58 @@
             justify-content: center;
             align-items: center;
         }
+
+        /* container  */
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .container .aside,
+        .container .content{
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
+
+        .container .aside{
+            width:300px;
+            background-color: #ff0;
+            /* float: left;
+
+            display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        .container .content{
+            width: 680px;
+            background-color: #0ff;
+            float: right;
+            /* float: left;
+
+            display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+
+        #ft{
+            width: 1000px;
+            height: 100px;
+            margin: 0 auto;
+            background-color:violet;
+
+            /* text-align: center;
+            line-height: 100px; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        
     </style>
 </head>
 <body>
@@ -90,7 +142,10 @@
         </nav>
     </header>
     <div class="visual">visual<br>dddd</div>
-    <div class="container"></div>
-    <footer></footer>
+    <div class="container clearfix">
+        <aside class="aside">aside</aside>
+        <section class="content">content</section>
+    </div>
+    <footer id="ft">footer</footer>
 </body>
 </html>
