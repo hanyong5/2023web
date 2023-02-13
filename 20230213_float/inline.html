@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background-color: #ccc;}
+        .wrap{
+            width: 300px;background-color: #0f0;
+            border: 1px solid #000;
+        }
+        .box1{width: 100px;height: 100px;background-color: #f00;float: left;}
+        .box2{width: 100px;height: 100px;background-color: #00f;float: left;}
+        .con{width: 100px;height: 50px;background-color: #fff;}
+        .clear{clear:both}
+        .box0:after{content:"!!!";display: block;}
+        .clearfix:after{
+            content:"";display: block;clear: both;
+        }
+
+        .menu{
+            width: 500px;
+            margin: 0 auto;
+            background-color: #0f0;
+        }
+        .menu li{
+            float: left;
+        }
+        .menu ul:after{}
+        .container:after{}
+    </style>
+</head>
+<body>
+    <div class="wrap clearfix">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+    </div>
+   <nav class="menu">
+    <ul class="clearfix">
+        <li>menu1</li>
+        <li>menu1</li>
+        <li>menu1</li>
+        <li>menu1</li>
+    </ul>
+   </nav>
+
+   <div class="container clearfix">
+    <section class="aside">ddd</section>
+    <section class="content">dd</section>
+   </div>
+    
+</body>
+</html>
