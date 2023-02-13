@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset  */
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a:link,a:visited{text-decoration: none;color:black}
+        .clearfix:after{
+            content: "";display: block;clear: both;
+        }
+        li{list-style: none;}
+
+        /* wrap  */
+        .wrap{
+            width: 1000px;
+            margin: 0 auto;
+            /* background-color: skyblue; */
+        }
+
+        /* header  */
+        #hd{
+            background-color:skyblue;
+            padding: 10px 0;
+        }
+        .wrap .logo{
+            float: left;
+            width: 100px;
+            height: 40px;
+            background-color: #f00;
+        }
+        .wrap .logo a{display: block;}
+
+        .wrap .menu{
+            float: right;background-color: #aaa;
+            width: 500px;
+        }
+        .menu li{
+            float: left;
+            width: calc( 100% / 4 );
+        }
+        .menu li a{
+            display: block;
+            text-align: center;
+            line-height: 40px;
+        }
+        .menu li a:hover{
+            background-color: blue;
+            color:white;
+            transition: 0.3s;
+        }
+
+
+        /* visual  */
+        .visual{
+            height: 300px;
+            background-color:violet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header id="hd" class="clearfix">
+            <h1 class="logo"><a href="#">logo</a></h1>
+            <nav class="menu">
+                <ul class="clearfix">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">제품소개</a></li>
+                    <li><a href="#">온라인문의</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="visual">visual</div>
+    </div>
+</body>
+</html>
