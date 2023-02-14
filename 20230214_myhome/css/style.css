@@ -1,0 +1,12 @@
+@charset "utf-8";
+html,body{height: 100%;}
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+}
+
+/* reset  */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+a:link,a:visited{text-decoration: none;color:#888} 
+.clearfix:after{content:"";display: block;clear: both;}
+li{list-style: none;}
