@@ -10,3 +10,24 @@ body{
 a:link,a:visited{text-decoration: none;color:#888} 
 .clearfix:after{content:"";display: block;clear: both;}
 li{list-style: none;}
+
+.container{width: 980px;margin: 0 auto;}
+
+/* header  */
+.top{border-bottom: 1px solid #E3D9D9;}
+.submenu{float: right;height: 26px;_background: skyblue;}
+.submenu li{float: left;}
+.submenu li a{
+    display: block;
+    _height: 26px;
+    _background: pink;
+    font-size: 12px;
+    padding: 0 10px;
+    line-height: 26px;
+    position: relative;
+}
+.submenu li a:after{
+    content:"";display: block;height: 10px;width: 1px;background: #888;
+    position: absolute;right: 0;top: 9px;
+}
+.submenu li:last-child a:after{display: none;}
