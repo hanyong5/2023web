@@ -11,6 +11,9 @@ body{
 a:link,a:visited{text-decoration: none;color:#888} 
 .clearfix:after{content:"";display: block;clear: both;}
 li{list-style: none;}
+h3{font-size:18px;letter-spacing: -1px;}
+
+
 
 .container{width: 980px;margin: 0 auto;}
 
@@ -69,3 +72,25 @@ h1 img{display: block;}
     right: 0;
     top:20px
 }
+
+/* banner  */
+.bWrapper{
+    background: #eee;
+}
+.bWrap li{
+    width: calc( 100% / 5 );
+    float: left;
+    color:white;
+    text-align: center;
+    padding: 20px  0;
+}
+.bWrap li img{
+    display: block;margin: 0 auto;
+    margin-bottom: 10px;
+}
+.bWrap li h3{margin-bottom: 7px;}
+.bWrap li:nth-child(1){background: #7C99B9;}
+.bWrap li:nth-child(2){background: #4F74A1;}
+.bWrap li:nth-child(3){background: #4B8CE0;}
+.bWrap li:nth-child(4){background: #3DB5F3;}
+.bWrap li:nth-child(5){background: #95C8FF;}
