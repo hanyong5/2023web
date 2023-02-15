@@ -76,6 +76,7 @@ h1 img{display: block;}
 /* banner  */
 .bWrapper{
     background: #eee;
+    margin-bottom: 50px;
 }
 .bWrap li{
     width: calc( 100% / 5 );
@@ -94,3 +95,22 @@ h1 img{display: block;}
 .bWrap li:nth-child(3){background: #4B8CE0;}
 .bWrap li:nth-child(4){background: #3DB5F3;}
 .bWrap li:nth-child(5){background: #95C8FF;}
+
+
+/* job  */
+.jobWrap div.jobItem{
+    float: left;
+    width: calc( ( 100% - 50px ) / 3 );
+    margin-right: 25px;
+}
+.jobWrap div.jobItem:last-child{
+    margin-right: 0;
+}
+.jobWrap img{display: block;}
+.jobWrap .tWrap{
+    padding: 20px 15px;
+    border: 1px solid #ddd;
+    border-top: 0 none;
+}
+.jobWrap h3{margin-bottom: 8px;}
+.jobWrap p{color:#888}
