@@ -3,6 +3,7 @@ html,body{height: 100%;}
 body{
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 14px;
+
 }
 
 /* reset  */
@@ -45,4 +46,26 @@ h1 img{display: block;}
 #hd .menu li a{
     display: block;height: 44px;font-size: 16px;color:white;
     text-align: center;line-height: 44px;font-weight:bold;letter-spacing: -0.8px;
+}
+
+
+/* visual  */
+.visual{
+    /* background: #1B335F; */
+    /* background-color: #1B335F;
+    background-image: url(../img/visual_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center; */
+    background: #213969 url(../img/visual_bg.jpg) no-repeat center;
+}
+
+.vWrap{position: relative;height: 400px;overflow: hidden;}
+.vWrap img{position: absolute;}
+.vWrap .img1{
+    left: 0;top: 50%;
+    margin-top: -123px;
+}
+.vWrap .img2{
+    right: 0;
+    top:20px
 }
