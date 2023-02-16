@@ -35,9 +35,25 @@
             float: left;
             width: calc( ( 100% - 75px ) / 4 );
             margin-right: 25px;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: scale(1);
+            transition:0.3s
         }
+        .con1 li:hover{
+            transform:scale(1.1)
+        }
+
         .con1 li:last-child{margin-right: 0;}
-        .con1 li img{width: 100%;display: block;}
+        .con1 li img{
+            width: 100%;display: block;
+            transform:scale(1);
+            transition:0.3s
+        }
+        .con1 li:hover img{
+            transform:scale(1.1)
+        }
+
         .con1 .tWrap{
             padding: 10px 15px;
         }
@@ -86,5 +102,6 @@
             </ul>
         </div>
     </div>
+    
 </body>
 </html>
