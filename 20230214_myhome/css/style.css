@@ -98,6 +98,7 @@ h1 img{display: block;}
 
 
 /* job  */
+.jobWrap{margin-bottom: 25px;}
 .jobWrap div.jobItem{
     float: left;
     width: calc( ( 100% - 50px ) / 3 );
@@ -114,3 +115,21 @@ h1 img{display: block;}
 }
 .jobWrap h3{margin-bottom: 8px;}
 .jobWrap p{color:#888}
+
+.con li{
+    float: left;
+    width: calc( ( 100% - 50px ) / 3 );
+    margin-right: 25px;
+    border: 1px solid #000;
+    position: relative;
+    padding: 20px 15px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 130px 10px;
+}
+.con li:last-child{margin-right: 0;}
+.con li .tWrap{width: 200px;position: relative;}
+.con li .tWrap h3,
+.con li .tWrap p{margin-bottom: 10px;line-height:21px;}
+.con li img{position: absolute;right: -20px;top: 10px;}
+.con li a{color:blue}
