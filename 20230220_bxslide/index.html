@@ -18,6 +18,32 @@
         .content{
             height: 200px;background: skyblue;
         }
+
+        .bx-wrapper {
+            -moz-box-shadow:0 0 0 #fff;
+            -webkit-box-shadow:0 0 0 #fff;
+            box-shadow: 0 0 0 #fff;
+            border:  0 none;
+            background: #fff;
+            margin-bottom: 0;
+        }
+        .bx-wrapper .bx-pager{
+            bottom: 30px;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager a:hover, 
+        .bx-wrapper .bx-pager.bx-default-pager a.active{
+            background: #fff;
+        }
+
+        .bx-wrapper .bx-pager.bx-default-pager a{
+            background: #f00;
+        }
+
+
+        .bWrap{
+            width: 400px;height: 300px;
+        }
     </style>
 
     <script src="js/jquery.min.js"></script>
@@ -27,7 +53,14 @@
             $(".slide").bxSlider({
                 auto:true,
             });
+
+            $(".slide1").bxSlider();
         })
+
+        // $(document).ready(function(){});
+        
+
+
 
         
     </script>
@@ -35,7 +68,6 @@
 </head>
 <body>
     <div class="wrap">
-        
         <ul class="slide">
             <li><img src="../images/pc01.jpg" alt=""></li>
             <li><img src="../images/pc02.jpg" alt=""></li>
@@ -43,10 +75,12 @@
         </ul>
     </div>
     <div class="content"></div>
-    
-
-
-
-    
+    <div class="bWrap">
+        <ul class="slide1">
+            <li><img src="../images/img1.jpg" alt=""></li>
+            <li><img src="../images/img2.jpg" alt=""></li>
+            <li><img src="../images/img3.jpg" alt=""></li>
+        </ul>
+    </div>
 </body>
 </html>
