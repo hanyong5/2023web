@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;height: 100px;
+            background: #f00;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box" onclick="location.href='http://www.naver.com'">
+        이동
+    </div>
+    <script>
+        const  year = 20;
+        const man = "여자"
+        let result = "";
+        let sex = "";
+
+        if( year >= 19 ){
+            result = "성인입니다"
+            // document.write("성인")
+            if( man == "남자" ){
+                sex  = "남자"
+            }else{
+                sex = "여자"
+            }
+        }else{
+            result = "성인이 아니니 나가세요"
+        }
+
+        document.write(sex  + result)
+
+        var id,pass;
+        id = prompt('아이디입력')
+    </script>
+</body>
+</html>

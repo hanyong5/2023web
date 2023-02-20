@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span.name{color:blue;font-weight: bold;}
+    </style>
+    <script>
+        document.write("test");
+        console.log("console");
+        // alert("hi");
+
+        let first = "한";  // var first = "한"  function 이름(){}
+        const name = "성용";
+
+        first =  "서";
+
+        document.write("나는 <span class='name'>" + first + name + "</span> 입니다<br>");
+
+        let num = 1;
+        document.write(num++ + "<br>")
+        document.write(num++ + "<br>")
+        document.write(num + "<br>")
+
+
+        let text = "한";
+        // text = "조";
+        
+
+        // text += "성용";
+        // text += "는 10살입니다."
+
+        // text +=  ""
+
+        document.write(text)
+
+
+    //     let result = "";
+    //    if( text > 1 && text < 10 ){
+    //         result = "참"
+    //     }
+
+       
+        // console.log(result)
+    </script>
+    
+</head>
+<body>
+    <div class="box" id="test">222
+        <img src="test.jpg" alt="">
+    </div>
+    <div class="box">111</div>
+    <script>
+        var x=5;
+        var y=7;
+        var result;
+       
+        result = (x>y)? x : y;
+
+        
+        document.getElementById("test").innerHTML = result
+
+        $("#test").html(result)
+    </script>
+</body>
+</html>
