@@ -18,11 +18,40 @@
     <div class="box" onclick="location.href='location01.html'">
 
     </div>
+    <div id="day">일요일</div>
+    <div id="day1">일요일</div>
+
+    
     <script>
         const week = new Date().getDay();
         console.log(week)
 
+        let day ="";
 
+        switch(week){
+            case 0:
+               day = "일";
+            case 1:
+               day = "월";
+                break;
+            case 2:
+               day = "화";
+                break;
+            case 3:
+               day = "수";
+                break;
+            case 4:
+               day = "목";
+                break;
+
+        }
+
+        // document.write("오늘은 " + day + "요일 입니다.")
+
+        document.getElementById("day").innerHTML = "오늘은 " + day + "요일 입니다.";
+        // $("#day1").html("오늘 역시 " + day + "요일 입니다")
+
+        console.log(document.getElementById("day1").innerHTML)
     </script>
 </body>
 </html>
