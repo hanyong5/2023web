@@ -8,27 +8,100 @@
     <link rel="stylesheet" href="./css/jquery.bxslider.css">
     <style>
         *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{background: #ccc;}
         .bWrap .slide1 li img{width: 100%;}
+
+        .bx-wrapper {
+            -moz-box-shadow: 0 0 0 #ccc;
+            -webkit-box-shadow: 0 0 0 #ccc;
+            box-shadow: 0 0 0 #ccc;
+            border: 0 none;
+            margin-bottom: 0;
+        }
+        .bx-wrapper .bx-pager{
+            bottom: 30px;
+        }
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .bWrap .slideli{
+            height: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bWrap .slideli .txtWrap{
+            height: 100%;
+        }
+        .bWrap .slideli .tWrap{
+            width: 400px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-shadow: 3px 3px 0 rgba(255,255,255,0.8),
+            0px -3px 0 rgba(255,255,255,0.8),
+            -3px 0px 0 rgba(255,255,255,0.8),
+            -3px -3px 0 rgba(255,255,255,0.8);
+        }
+        .bWrap .slideli h3{
+            margin-bottom: 10px;
+        }
     </style>
+
+    
+</head>
+<body>
+    <div class="bWrap">
+        <ul class="slide1">
+            <li style="background-image:url(../images/pc01.jpg)" class="slideli">
+                <!-- <img src="../images/pc01.jpg" alt=""> -->
+                <div class="container txtWrap">
+                    <div class="tWrap">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, voluptas!</p>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image:url(../images/pc02.jpg)" class="slideli">
+                <!-- <img src="../images/pc01.jpg" alt=""> -->
+                <div class="container txtWrap">
+                    <div class="tWrap">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, voluptas!</p>
+                    </div>
+                </div>
+            </li>
+            <li style="background-image:url(../images/pc03.jpg)" class="slideli">
+                <!-- <img src="../images/pc01.jpg" alt=""> -->
+                <div class="container txtWrap">
+                    <div class="tWrap">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, voluptas!</p>
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/jquery.bxslider.js"></script>
     <script>
         // $(document).ready(function(){ 여기가 실행; })
-        $(document).ready(function(){
-            $(".slide1").bxSlider()
-        });
+        $(".slide1").bxSlider({
+            auto:true,
+            controls:false,
+            //pager:false
+        })
+        
         
     </script>
-</head>
-<body>
-    <div class="bWrap">
-        <ul class="slide1">
-            <li><img src="../images/pc01.jpg" alt=""></li>
-            <li><img src="../images/pc02.jpg" alt=""></li>
-            <li><img src="../images/pc03.jpg" alt=""></li>
-        </ul>
-    </div>
 
 </body>
 </html>
