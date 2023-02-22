@@ -55,6 +55,7 @@
             "#",
         ]
 
+        
         let menu = "";
         for(let i=0;i<gMenu.length;i++){
             menu += "<li>";
@@ -64,11 +65,13 @@
         console.log(menu)
 
 
-        
+
         const gnbEl = document.getElementsByClassName("gnb")[0];
         
         gnbEl.innerHTML  = menu;
-        // $(".gnb").html(menu)
+        
+        $(".gnb").html(menu)
+
     </script>
 </body>
 </html>

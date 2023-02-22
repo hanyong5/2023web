@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        .clearfix:after{
+            content:"";display: block;clear: both;
+        }
+        body{background: skyblue;}
+
+        .wrap{
+            width: 1000px;
+            margin: 0 auto
+        }
+
+        .bx-wrapper {
+            -moz-box-shadow: 0 0 0 #ccc;
+            -webkit-box-shadow: 0 0 0 #ccc;
+            box-shadow: 0 0 0 #ccc;
+            border: 0 none;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="slide1">
+            <li>
+                <img src="../images/main_slider01.jpg" alt="">
+            </li>
+            <li>
+                <img src="../images/main_slider01.jpg" alt="">
+            </li>
+            <li>
+                <img src="../images/main_slider01.jpg" alt="">
+            </li>
+            <li>
+                <img src="../images/main_slider01.jpg" alt="">
+            </li>
+        </ul>
+        <div class="slide_pager">
+            <a class="tab" data-slide-index="0">tab1</a>
+            <a class="tab" data-slide-index="1">tab2</a>
+            <a class="tab" data-slide-index="2">tab3</a>
+            <a class="tab" data-slide-index="3">tab4</a>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script>
+        $(".slide1").bxSlider({
+            auto:true,
+            controls:false,
+            //pager:false,
+            pagerCustom:'.slide_pager',
+            mode:'vertical'
+        })
+    </script>
+</body>
+</html>
