@@ -37,7 +37,8 @@
         let city = "";
         for(let i=0;i<arr.length;i++){
             // document.write(arr[i]);
-            city = city + "<a href='" + alink[i] + "'>" + arr[i] + "</a><br>";
+            //city = city + "<a href='" + alink[i] + "'>" + arr[i] + "</a><br>";
+            city  += `<a href="${alink[i]}">${arr[i]}</a><br>`;
         }
         console.log(city);
         // document.write(city)
@@ -49,5 +50,7 @@
 
 
     </script>
+
+    
 </body>
 </html>
