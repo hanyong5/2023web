@@ -38,6 +38,7 @@
             <ul class="gnb clearfix"></ul>
         </nav>
     </header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const gMenu = [
             "company",
@@ -61,7 +62,13 @@
             menu += "</li>";
         }
         console.log(menu)
-        document.getElementsByClassName("gnb")[0].innerHTML  = menu;
+
+
+        
+        const gnbEl = document.getElementsByClassName("gnb")[0];
+        
+        gnbEl.innerHTML  = menu;
+        // $(".gnb").html(menu)
     </script>
 </body>
 </html>
