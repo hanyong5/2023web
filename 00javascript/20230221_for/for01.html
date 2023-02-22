@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        li{list-style: none;}
+        .clearfix:after{content: "";display: block;clear: both;}
+        a:link,a:visited{
+            text-decoration: none;
+            color: #222;
+        }
+        .wrap{width: 1000px;margin: 0 auto;}
+        .gnb li{
+            float: left;
+            width: calc( 100% / 5 );
+            height: 40px;
+            
+        }
+        .gnb li a{
+            display: flex;height: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+        .gnb li:hover{
+            background-color:skyblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="wrap">
+        <nav>
+            <ul class="gnb clearfix"></ul>
+        </nav>
+    </header>
+    <script>
+        const gMenu = [
+            "company",
+            "제품소개",
+            "온라인문의",
+            "커뮤니티",
+            "공지사항"
+        ]
+        const gLink = [
+            "#",
+            "#",
+            "#",
+            "#",
+            "#",
+        ]
+
+        let menu = "";
+        for(let i=0;i<gMenu.length;i++){
+            menu += "<li>";
+            menu += "<a href='" + gLink[i] + "'>" + gMenu[i] + "</a>";
+            menu += "</li>";
+        }
+        console.log(menu)
+        document.getElementsByClassName("gnb")[0].innerHTML  = menu;
+    </script>
+</body>
+</html>
