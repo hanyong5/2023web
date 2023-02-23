@@ -16,7 +16,8 @@
 
         .wrap{
             width: 1000px;
-            margin: 0 auto
+            margin: 0 auto;
+            position: relative;
         }
 
         .bx-wrapper {
@@ -25,6 +26,30 @@
             box-shadow: 0 0 0 #ccc;
             border: 0 none;
             background: #fff;
+            margin-bottom: 0;
+        }
+        .slide_pager{
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            bottom: 0;
+            background: rgba(255,0,0,0.3);
+        }
+        .slide_pager a{
+            float: left;
+            height: 40px;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide_pager a.active{background: violet;}
+        .visual{height: 200px;background: blue;}
+        .txtWrap{
+            position: absolute;
+            right: 20px;top: 30px;
+            width: 400px;
+            background: skyblue;
         }
     </style>
 </head>
@@ -33,23 +58,42 @@
         <ul class="slide1">
             <li>
                 <img src="../images/main_slider01.jpg" alt="">
+                <div class="txtWrap">
+                    <h3>test1</h3>
+                    <p>test</p>
+                </div>
             </li>
             <li>
                 <img src="../images/main_slider01.jpg" alt="">
+                <div class="txtWrap">
+                    <h3>test2</h3>
+                    <p>test</p>
+                </div>
             </li>
             <li>
                 <img src="../images/main_slider01.jpg" alt="">
+                <div class="txtWrap">
+                    <h3>test3</h3>
+                    <p>test</p>
+                </div>
             </li>
             <li>
                 <img src="../images/main_slider01.jpg" alt="">
+                <div class="txtWrap">
+                    <h3>test4</h3>
+                    <p>test</p>
+                </div>
             </li>
         </ul>
-        <div class="slide_pager">
-            <a class="tab" data-slide-index="0">tab1</a>
-            <a class="tab" data-slide-index="1">tab2</a>
-            <a class="tab" data-slide-index="2">tab3</a>
-            <a class="tab" data-slide-index="3">tab4</a>
+        <div class="slide_pager clearfix">
+            <a data-slide-index="0">tab1</a>
+            <a data-slide-index="1">tab2</a>
+            <a data-slide-index="2">tab3</a>
+            <a data-slide-index="3">tab4</a>
         </div>
+    </div>
+    <div class="visual">
+        test
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.bxslider.js"></script>
