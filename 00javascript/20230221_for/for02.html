@@ -33,6 +33,9 @@
     </style>
 </head>
 <body>
+    <div id="home">
+        test
+    </div>
     <div class="img container">
         <!-- .imgView -->
     </div>
@@ -110,7 +113,12 @@
                         </div>`;
         }
         console.log(imgView)
-        document.getElementsByClassName("img")[0].innerHTML = imgView
+        const imgElem = document.getElementsByClassName("img")[0];
+        imgElem.innerHTML = imgView;
+
+        imgElem.style.backgroundImage
+
+        console.log(document.getElementsByClassName("img")[0].innerHTML)
         
 
     </script>
