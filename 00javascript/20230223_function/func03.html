@@ -12,6 +12,8 @@
             height: 300px;
             background-color: skyblue;
             position: relative;
+            margin: 0 auto;
+            overflow: hidden;
         }
         .box1{
             width: 100px;
@@ -30,15 +32,46 @@
             justify-content: center;
             align-items: center;
             position: absolute;
-            left: 0;bottom: 0;
+            left: -500px;bottom: 0;
             background-color: violet;
+            transition: 0.3s;
         }
     </style>
 </head>
 <body>
     <div class="wrap">
-        <div class="box1">마우스오버</div>
-        <div class="box2">색변화</div>
+        <div class="box1" onmouseover="boxOver()" onmouseout="boxOut()">마우스오버</div>
+        <div class="box2">색변화<br>
+            마우스오버시 검정색<br>
+            마우스아웃시 바이올렛
+        </div>
     </div>
+    <script>
+        // 1.html scipt삽입
+        // 2.dom 적용
+
+        const box1Elem = document.getElementsByClassName("box1")[0];
+        const box2Elem = document.getElementsByClassName("box2")[0];
+
+        // box1Elem.onmouseover = function(){
+        //     box2Elem.style.background = "black"
+        // }
+        // box1Elem.onmouseout = function(){
+        //     box2Elem.style.background = "violet"
+        // }
+
+        function boxOver(){
+            box2Elem.style.background = "black";
+            box2Elem.style.left = "0px";
+
+        }
+        function boxOut(){
+            box2Elem.style.background = "violet"
+            box2Elem.style.left = "-500px";
+
+        }
+
+
+    </script>
 </body>
 </html>
