@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .btn{
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .sky{
+            background: skyblue;
+        }
+        .pink{
+            background: pink;
+        }
+        .btn:hover{
+            background-color: #333;
+            color:white
+        }
+        .box{
+            width: 200px;height: 200px;
+            background-color:violet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // print();
+        // han();
+
+        function print(){
+            console.log("print")
+        }
+
+        const han = function(){
+            console.log("han")
+        }
+
+        function link(mylink){
+            location.href = "http://" + mylink;
+        }
+
+        function link1(mylink){
+            if(mylink == "네이버"){
+               location.href = "http://www.naver.com" 
+            }else{
+                alert("경로가 없음")
+            }
+        }
+    </script>
+    <div onclick="link('www.naver.com')" class="btn sky">클릭</div>
+    <div onclick="link('www.daum.net')" class="btn pink">클릭</div>
+
+
+    <div onclick="link1('네이버')" class="btn pink">네이버</div>
+    <div onclick="link1('다음')" class="btn pink">다음</div>
+
+    <div class="box" 
+    onmouseover="boxOver('black','white')" 
+    onmouseout="boxOut()">
+        마우스
+    </div>
+
+
+    <script>
+        const boxElem = document.getElementsByClassName("box")[0];
+
+        // boxElem.onmouseover = function(){
+        //     console.log("mouseover");
+        //     boxElem.style.background = "blue"
+        //     boxElem.style.color="white"
+        // }
+        // boxElem.onmouseout = function(){
+        //     console.log("mouseout");
+        //     boxElem.style.background = "violet";
+        //     boxElem.style.color="black"
+        // }
+
+        function boxOver(color,fcolor){
+            boxElem.style.background = color;
+            boxElem.style.color = fcolor;
+        }
+        function boxOut(){
+            boxElem.style.background = "violet"
+            boxElem.style.color = "black";
+        }
+    </script>
+
+
+</body>
+</html>
