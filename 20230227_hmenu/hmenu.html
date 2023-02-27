@@ -20,6 +20,7 @@
             height: 50px;
             border: 1px solid #000;
             position: relative;
+            cursor: pointer;
         }
         .line{
             width: 30px;
@@ -31,30 +32,42 @@
             top: 50%;
             /* margin-left: -15px;
             margin-top: -1.5px; */
-            transform:translate(-50%,-50%)
+            transform:translate(-50%,-50%);
+            transition: 0.3s;
+           
         }
-        .btnWrap.click .line1{
-            transform:translate(-50%,-50%) rotate(45deg);
+        .btnWrap .line1{
+            transform:translate(-50%,calc( -50% - 10px ))
         }
+        .btnWrap .line3{
+            transform:translate(-50%,calc( -50% + 10px ))
+        }
+
+        .btnWrap.click .line1{transform:translate(-50%,-50%) rotate(45deg)}
+        .btnWrap.click .line2{opacity: 0;}
+        .btnWrap.click .line3{transform:translate(-50%,-50%) rotate(-45deg)}
+
     </style>
 </head>
 <body>
-    <div class="btnWrap" onmouseover="mClick()" onmouseout="moClick()">
+    <div class="btnWrap" onclick="mclick()">
         <div class="line line1"></div>
         <div class="line line2"></div>
         <div class="line line3"></div>
     </div>
     <script>
-        const btnElem = document.querySelector(".btnWrap")
+        const btnElem = document.querySelector(".btnWrap");
 
-        function mClick(){
-            console.log("click")
-            btnElem.classList.toggle("click")
-        }
-        function moClick(){
-            console.log("click")
-            btnElem.classList.toggle("click")
-        }
+        // btnElem.addEventListener("click",function(){
+        //     btnElem.classList.toggle("click")
+        // })
+
+        // btnElem.onclick = function(){}
+        // $(".btnWrap").click(function(){})
+
+       function mclick(){
+        btnElem.classList.toggle("click");
+       }
     </script>
 </body>
 </html>
