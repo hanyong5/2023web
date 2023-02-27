@@ -15,7 +15,6 @@
     <script>
         const cityText = document.getElementsByClassName("city1")[0];
         
-
         const city = [
             "seoul",
             "daegu",
@@ -27,7 +26,8 @@
 
             let textSum = "";
             for(let i=0;i<citySize;i++){
-                textSum += city[i]+"<br>"
+                // textSum += city[i]+"<br>"
+                textSum = textSum + city[i]+"<br>"
             }
             cityText.innerHTML = textSum;
         }
