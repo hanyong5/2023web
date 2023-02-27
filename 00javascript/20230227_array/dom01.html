@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="test1">1</div>
+    <div class="test1">2</div>
+    <div class="test1">2</div>
+    <div class="test1">2</div>
+    <div class="test2">3</div>
+    <script>
+        // const test1Elem = document.getElementsByClassName("test1")
+
+        const test1Elem = document.querySelectorAll("div.test1")
+        const test1Size = test1Elem.length;
+        for(let i=0;i<test1Size;i++){
+            test1Elem[i].style.background = "pink"
+        }
+
+    </script>
+</body>
+</html>

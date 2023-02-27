@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="city1"></div>
+    <div class="city1"></div>
+    <div class="city2"></div>
+    <div class="city3"></div>
+
+    <script>
+        const cityText = document.getElementsByClassName("city1")[0];
+        
+
+        const city = [
+            "seoul",
+            "daegu",
+            "incheon"
+        ]
+        const citySize = city.length;
+
+        function printCity(){
+
+            let textSum = "";
+            for(let i=0;i<citySize;i++){
+                textSum += city[i]+"<br>"
+            }
+            cityText.innerHTML = textSum;
+        }
+        printCity();
+
+
+    </script>
+    
+
+</body>
+</html>

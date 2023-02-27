@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let han = "a"
+        
+        const arr1 = ["a","b","c","d"]
+        console.log(arr1[0])
+        // document.write(arr1[0])
+        // alert(arr1[1])
+        console.log(arr1.length)
+        for(let i=0;i<arr1.length;i++){
+            console.log(arr1[i])
+        }
+
+        const city = [
+            "seoul",
+            "busan",
+            "incheon",
+            "daegu",
+        ]
+        let citySize = city.length;
+
+        // for(let i=0;i<citySize;i++){
+        //     document.write(city[i]+"<br>")
+        //     console.log(city[i])
+        // }
+
+
+        
+        function printCity(){
+            let text = "";
+            for(let i=0;i<citySize;i++){
+                text = text + city[i]
+                // document.write(city[i]+"<br>")
+                // console.log(city[i])
+                
+            }
+             return text;
+        }
+         let textValue = printCity();
+        // console.log(textValue)
+    </script>
+
+    <div class="city1">
+
+    </div>
+    <div class="city2">
+
+    </div>
+
+    <script>
+        document.getElementsByClassName("city1")[0].innerHTML = textValue
+    </script>
+</head>
+<body>
+
+</body>
+</html>
