@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{height: 100%;}
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{
+            display: flex;justify-content: center;align-items: center;
+        }
+
+        .menuWrap{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #746c6c;
+            display: flex;
+            justify-content: center;
+            align-items:center; 
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .line{
+            width: 20px;height: 3px;
+            background-color: #000;
+            border-radius: 2px;
+            position: absolute;
+            transition:0.3s
+        }
+        .line.line1{transform:translateY(-10px)}
+        .line.line2{opacity: 1;}
+        .line.line3{transform: translateY(10px);}
+
+        .menuWrap.click .line.line1{transform:translateY(0px) rotate(45deg)}
+        .menuWrap.click .line.line2{opacity: 0;}
+        .menuWrap.click .line.line3{transform: translateY(0px) rotate(-45deg);}
+    </style>
+</head>
+<body>
+    <div class="menuWrap" onclick="mclick()">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+
+    <script>
+
+        // 1. html작성, css작성 -> 디자인
+        // 2. 클릭화면 작성(class추가), 클릭화면 확인 ->디자인 2차
+        // 3. script 작성 : 선택자 서칭( class변화는 대상 선택)
+        // 4. click event 작성 ( 선택자.classList.toggle("") )
+        //    인라인형태, 선택자 이벤트실행
+        // 5. 실행 오류찾기 - > 완성
+
+
+        const mWrapElem = document.querySelector(".menuWrap")
+        function mclick(){
+            // mWrapElem.classList.add("click")
+            mWrapElem.classList.toggle("click")
+        }
+    </script>
+</body>
+</html>
