@@ -16,6 +16,7 @@
       height: 100%;
       
     }
+    *{box-sizing: border-box;}
 
     body {
       background: skyblue;
@@ -34,12 +35,16 @@
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding: 20px 0;
+      width: 100%;
     }
-
+    .swiper-slide .sItem{background: white;transition: 0.3s;}
+    .swiper-slide .sItem:hover{
+      transform: translate(0,-10px);
+    }
+    .swiper-slide .sItem .iWrap{position: relative;width: 100%;height:0;padding-top: 60%;background:blue;}
+    .swiper-slide .sItem .iWrap img{position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);}
+    .swiper-slide .sItem .tWrap{padding: 10px;}
     .swiper-slide img {
       display: block;
       width: 100%;
@@ -48,7 +53,6 @@
     }
     .wrap{
         width: 1000px;
-        height: 500px;
         margin: 0 auto;
         position: relative;
     }
@@ -76,15 +80,62 @@
 
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
-          <div class="swiper-slide">Slide 4</div>
-          <div class="swiper-slide">Slide 5</div>
-          <div class="swiper-slide">Slide 6</div>
-          <div class="swiper-slide">Slide 7</div>
-          <div class="swiper-slide">Slide 8</div>
-          <div class="swiper-slide">Slide 9</div>
+          <div class="swiper-slide">
+            <div class="sItem">
+              <div class="iWrap">
+                <img src="../images/img1.jpg" alt="">
+              </div>
+              <div class="tWrap">
+                <h3>Lorem, ipsum dolor.1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, porro?</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="sItem">
+              <div class="iWrap">
+                <img src="../images/pc01.jpg" alt="">
+              </div>
+              <div class="tWrap">
+                <h3>Lorem, ipsum dolor.1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, porro?</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="sItem">
+              <div class="iWrap">
+                <img src="../images/pc02.jpg" alt="">
+              </div>
+              <div class="tWrap">
+                <h3>Lorem, ipsum dolor.1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, porro?</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="sItem">
+              <div class="iWrap">
+                <img src="../images/img1.jpg" alt="">
+              </div>
+              <div class="tWrap">
+                <h3>Lorem, ipsum dolor.1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, porro?</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="sItem">
+              <div class="iWrap">
+                <img src="../images/img1.jpg" alt="">
+              </div>
+              <div class="tWrap">
+                <h3>Lorem, ipsum dolor.1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, porro?</p>
+              </div>
+            </div>
+          </div>
+          
         </div>
         <!-- <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div> -->
@@ -104,13 +155,14 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 10,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
+      // centeredSlides: true,
+      // loop:true,
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      // },
       navigation: {
         nextEl: ".wrap .next",
         prevEl: ".wrap .prev",
