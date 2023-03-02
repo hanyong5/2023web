@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         td{
+            border: 1px solid #000;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        tr{background-color: #ddd;text-align: center;}
+        tr:nth-child(1){background-color:skyblue;}
+        tr>td:first-child{border-left: 0 none}
+        tr>td:last-child{border-right: 0 none}
+    </style>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    <table>
+        <tr>
+            <td></td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+        </tr>
+        <tr v-for="(item1,index) in arr">
+            <td>{{arr[index].name}}</td>
+            <td>{{item1.kor}}</td>
+            <td>{{item1.eng}}</td>
+            <td>{{item1.math}}</td>
+        </tr>
+        <script>
+            // arr.forEach(function(item,index){
+            //     console.log(arr[index])
+            //     console.log(item)
+            // });
+        </script>
+    </table>
+</div>
+
+<script>
+  const { createApp } = Vue
+
+  createApp({
+    data() {
+      return {
+        arr:[
+            {
+                name:"한성용",
+                kor:70,
+                eng:80,
+                math:60,
+            },
+            {
+                name:"홍길동",
+                kor:60,
+                eng:90,
+                math:40,
+            },
+            {
+                name:"이춘식",
+                kor:51,
+                eng:90,
+                math:30,
+            },
+        ]
+      }
+    }
+  }).mount('#app')
+</script>
+</body>
+</html>
