@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="inpWrap">
-        <input type="text" class="inp" value="" placeholder="오늘의 할일은...">
+        <input type="text" class="inp" value="ssss" placeholder="오늘의 할일은...">
         <button class="btn1">입력</button>
     </div>
     <div class="listView">
@@ -50,7 +50,7 @@
             }else{
                 listData.push(inpElem.value);
                 viewData();
-                inpElem.value = ""
+                inpElem.value = "";
             }
             
         })
@@ -61,8 +61,12 @@
                 listTitle += `<li>${listData[i]}</li>`;
             }
             listTitle += "</ul>";
+
+            
             console.log(listTitle)
             listElem.innerHTML = listTitle
+            console.log(listData)
+
         }
         viewData();
     </script>
