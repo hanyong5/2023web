@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="score">
+        <table>
+            <tr>
+                <td></td>
+                <td>국어</td>
+                <td>영어</td>
+                <td>수학</td>
+            </tr>
+            
+           
+
+        </table>
+    </div>
+    <script>
+        const arr = [
+            {
+                name:"한성용",
+                kor:70,
+                eng:80,
+                math:60,
+            },
+            {
+                name:"홍길동",
+                kor:60,
+                eng:90,
+                math:40,
+            },
+            {
+                name:"이춘식",
+                kor:51,
+                eng:90,
+                math:30,
+            },
+        ]
+        // console.log(arr[0].name);
+
+        const sElem = document.querySelector(".score");
+        let kSum = 0;
+        let textSum =  `<table>
+                            <tr>
+                                <td></td>
+                                <td>국어</td>
+                                <td>영어</td>
+                                <td>수학</td>
+                            </tr>`;
+
+        for(let i=0;i<arr.length;i++){
+            
+            textSum += "<tr>";
+            textSum += "<td>"+ arr[i].name +"</td>";
+            textSum += "<td>"+ arr[i].kor +"</td>";
+            textSum += "<td>"+ arr[i].eng +"</td>";
+            textSum += "<td>"+ arr[i].math +"</td>";
+            textSum += "</tr>";
+
+            kSum += arr[i].kor;
+        }
+        textSum += "    <tr>";
+        textSum += "        <td>합계</td>";
+        textSum += "        <td>"+ parseInt(kSum / arr.length) +"</td>";
+        textSum += "        <td></td>";
+        textSum += "        <td></td>";
+        textSum += "    </tr>";
+        textSum += "</table>";
+
+        sElem.innerHTML = textSum
+    </script>
+    
+</body>
+</html>
