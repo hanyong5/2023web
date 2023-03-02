@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <style>
+        html,body{height: 100%;}
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a:link,a:visited{text-decoration: none;color:#333}
+        li{list-style: none;}
+
+
+        .inpWrap{
+            width: 300px;
+            margin: 0 auto;
+            background: skyblue;
+        }
+        .listView{
+            width: 300px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp" value="" placeholder="오늘의 할일은...">
+        <button class="btn1">입력</button>
+    </div>
+    <div class="listView">
+
+    </div>
+
+    <script>
+
+
+        const inpElem = document.querySelector(".inp");
+        const btnElem = document.querySelector(".btn1");
+        const listElem = document.querySelector(".listView");
+
+        const listData = []
+        // btnElem.addEventListener("이벤트이름",리스터)
+        btnElem.addEventListener("click",function(){
+           
+            if(inpElem.value == ""){
+                alert("오늘의 할일을 입력하세요");
+                inpElem.focus()
+            }else{
+                listData.push(inpElem.value);
+                viewData();
+                inpElem.value = ""
+            }
+            
+        })
+
+        function viewData(){
+            let listTitle = "<ul>";
+            for(let i=0;i<listData.length;i++){
+                listTitle += `<li>${listData[i]}</li>`;
+            }
+            listTitle += "</ul>";
+            console.log(listTitle)
+            listElem.innerHTML = listTitle
+        }
+        viewData();
+    </script>
+</body>
+</html>
