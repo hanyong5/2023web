@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="animate.css">
+    <style>
+    .container{
+        width: 1000px;
+        margin: 0 auto
+    }
+    .hd{
+        height: 80px;
+        background-color: skyblue;
+    }
+    .visual{
+        height: 100vh;
+        background-image: url(../../images/pc01.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .content ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    .content ul li{width: calc( ( 100% - 60px ) / 4 );}
+    .content ul img{width: 100%;display: block;}
+    .content ul .tWrap{background-color: #ddd;padding: 15px 20px;}
+    </style>
+</head>
+<body>
+    <header class="hd container"></header>
+    <div class="visual"></div>
+    <section class="content container">
+        <ul>
+            <li class="wow bounceInUp" data-wow-delay="0" data-wow-offset="100">
+                <img src="../../images/testimg.jpg" alt="">
+                <div class="tWrap">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, deleniti?</p>
+                </div>
+            </li>
+            <li class="wow bounceInUp" data-wow-delay="0.2s">
+                <img src="../../images/testimg.jpg" alt="">
+                <div class="tWrap">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, deleniti?</p>
+                </div>
+            </li>
+            <li class="wow bounceInUp"  data-wow-delay="0.4s">
+                <img src="../../images/testimg.jpg" alt="">
+                <div class="tWrap">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, deleniti?</p>
+                </div>
+            </li>
+            <li class="wow bounceInUp"  data-wow-delay="0.6s">
+                <img src="../../images/testimg.jpg" alt="">
+                <div class="tWrap">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, deleniti?</p>
+                </div>
+            </li>
+            
+        </ul>
+    </section>
+
+
+    <section class="content container" style="display:none">
+        <ul>
+            <li class="wow flip" data-wow-delay="0" data-wow-iteration="infinite">
+                <img src="../../images/testimg.jpg" alt="">
+                <div class="tWrap">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, deleniti?</p>
+                </div>
+            </li>
+            <li class="wow flip" data-wow-delay="0.2s" data-wow-iteration="infinite">
+                <img src="../../images/testimg.jpg" alt="">
+                <div class="tWrap">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, deleniti?</p>
+                </div>
+            </li>
+            <li class="wow flip"  data-wow-delay="0.4s" data-wow-iteration="infinite">
+                <img src="../../images/testimg.jpg" alt="">
+                <div class="tWrap">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, deleniti?</p>
+                </div>
+            </li>
+            <li class="wow flip"  data-wow-delay="0.6s" data-wow-iteration="infinite">
+                <img src="../../images/testimg.jpg" alt="">
+                <div class="tWrap">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, deleniti?</p>
+                </div>
+            </li>
+            
+        </ul>
+    </section>
+
+    <script src="wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>
