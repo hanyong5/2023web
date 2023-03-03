@@ -29,6 +29,7 @@
         const inpElem = document.querySelector(".inp");
         const btn1Elem = document.querySelector(".btn1");
         const listElem = document.querySelector(".listView ul");
+        const btnAllElem = document.querySelector(".btnAllDel");
 
         let listData = [
             "자바스크립트1",
@@ -50,21 +51,31 @@
         })
         function viewData(){
             let viewList = "";
-            for(let i=0;i<listData.length;i++){
-                viewList += "<li>"+ listData[i] +"</li>"
-            }
+            // for(let i=0;i<listData.length;i++){
+            //     viewList += "<li>"+ listData[i] +"<span onclick='itemDel("+ i + ")'>삭제</span></li>"
+            // }
+
+            listData.forEach(function(item,index){
+                viewList += `<li>${item}<span onclick="itemDel(${index})">삭제</span></li>`
+            })
+
+
             listElem.innerHTML = viewList;
 
             if(listData.length>0){
-                document.querySelector(".btnAllDel").style.display =  "block"
+                btnAllElem.style.display =  "block"
             }else{
-                document.querySelector(".btnAllDel").style.display =  "none"
+                btnAllElem.style.display =  "none"
             }
         };
         viewData();
 
         function allDel(){
             listData = [];
+            viewData();
+        }
+        function itemDel(index){
+            listData.splice(index,1);
             viewData();
         }
 
