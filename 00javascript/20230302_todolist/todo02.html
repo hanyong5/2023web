@@ -11,9 +11,21 @@
             width: 400px;
             margin: 0 auto;
         }
-        .inpWrap{background-color: pink;}
+        .inpWrap{background-color: pink;margin-bottom: 10px;}
         .listView{}
         .btnAllDel{display: none;}
+        .listView ul li{
+            display: flex;
+            justify-content: space-between;
+        }
+        .listView .view{
+            height: 100px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: violet;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -23,20 +35,17 @@
     </div>
     <div class="listView">
         <ul></ul>
+        <div class="view">오늘의 할일을 입력하세요</div>
         <button class="btnAllDel" onclick="allDel()">전체삭제</button>
     </div>
     <script>
         const inpElem = document.querySelector(".inp");
         const btn1Elem = document.querySelector(".btn1");
         const listElem = document.querySelector(".listView ul");
+        const listNoneElem = document.querySelector(".listView .view");
         const btnAllElem = document.querySelector(".btnAllDel");
 
-        let listData = [
-            "자바스크립트1",
-            "자바스크립트2",
-            "자바스크립트3",
-            "자바스크립트4",
-        ];
+        let listData = [];
 
         btn1Elem.addEventListener("click",function(){
             // console.log(inpElem.value)
@@ -56,17 +65,18 @@
             // }
 
             listData.forEach(function(item,index){
-                viewList += `<li>${item}<span onclick="itemDel(${index})">삭제</span></li>`
+                viewList += `<li><span>${item}</span><span onclick="itemDel(${index})">삭제</span></li>`
             })
 
-
-            listElem.innerHTML = viewList;
-
             if(listData.length>0){
-                btnAllElem.style.display =  "block"
+                btnAllElem.style.display =  "block";
+                listNoneElem.style.display =  "none";
             }else{
                 btnAllElem.style.display =  "none"
+                listNoneElem.style.display =  "flex";
             }
+
+            listElem.innerHTML = viewList;
         };
         viewData();
 
