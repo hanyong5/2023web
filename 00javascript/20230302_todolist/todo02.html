@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .inpWrap,.listView{
+            width: 400px;
+            margin: 0 auto;
+        }
+        .inpWrap{background-color: pink;}
+        .listView{}
+        .btnAllDel{display: none;}
+    </style>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn1">입력</button>
+    </div>
+    <div class="listView">
+        <ul></ul>
+        <button class="btnAllDel" onclick="allDel()">전체삭제</button>
+    </div>
+    <script>
+        const inpElem = document.querySelector(".inp");
+        const btn1Elem = document.querySelector(".btn1");
+        const listElem = document.querySelector(".listView ul");
+
+        let listData = [
+            "자바스크립트1",
+            "자바스크립트2",
+            "자바스크립트3",
+            "자바스크립트4",
+        ];
+
+        btn1Elem.addEventListener("click",function(){
+            // console.log(inpElem.value)
+            if(inpElem.value != ""){
+                listData.push(inpElem.value);
+                inpElem.value = ""
+                viewData();
+            }else{
+                alert("오늘의 할일을 입력하세요")
+                inpElem.focus()
+            }
+        })
+        function viewData(){
+            let viewList = "";
+            for(let i=0;i<listData.length;i++){
+                viewList += "<li>"+ listData[i] +"</li>"
+            }
+            listElem.innerHTML = viewList;
+
+            if(listData.length>0){
+                document.querySelector(".btnAllDel").style.display =  "block"
+            }else{
+                document.querySelector(".btnAllDel").style.display =  "none"
+            }
+        };
+        viewData();
+
+        function allDel(){
+            listData = [];
+            viewData();
+        }
+
+    </script>
+</body>
+</html>
