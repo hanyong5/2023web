@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .container{width: 1200px;margin: 0 auto;}
+        .hdWrap{padding: 10px 0;background: violet;}
+        .mWrap{display: flex;background: pink;}
+        .mWrap h1{width: 100px;text-align: center;}
+        .mWrap .nav{
+            margin-left: auto;
+        }
+        .mWrap .nav ul{
+            display: flex;
+            height: 100%;
+        }
+        .mWrap .nav ul li{width: 150px;height: 100%;}
+        .mWrap .nav ul li a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .mWrap .nav ul li a:hover{
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="hdWrap">
+        <div class="mWrap container">
+            <h1><a href="#">logo</a></h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">menu01</a></li>
+                    <li><a href="#">menu02</a></li>
+                    <li><a href="#">menu03</a></li>
+                    <li><a href="#">menu04</a></li>
+                    <li><a href="#">menu05</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

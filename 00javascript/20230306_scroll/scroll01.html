@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .header{
+            display: flex;
+            padding: 5px 10px;
+            /* position: fixed; */
+            width: 100%;
+            transition: 0.3s;
+        }
+        .header.fixed{
+            position: fixed;
+        }
+        .gnb{margin-left: auto;}
+        .header a{
+            background: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .visual{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="#">logo</a></h1>
+        <a href="#" class="gnb">menu1</a>
+        <a href="#">menu2</a>
+        <a href="#">menu3</a>
+    </div>
+    <div class="visual"></div>
+
+    <script>
+        const hElem = document.querySelector(".header");
+
+        let winY = window.pageYOffset;
+        console.log(winY)
+
+
+
+        window.addEventListener("scroll",function(){
+            winY = window.pageYOffset;
+            console.log(winY)
+            if(winY > 200){
+                hElem.classList.add("fixed")
+            }else{
+                hElem.classList.remove("fixed")
+            }
+        })
+    </script>
+</body>
+</html>
