@@ -102,7 +102,7 @@
                 viewList += `<li>
                                 <div class="list">${item}</div>
                                 <div class='icon'>
-                                    <a href="#" onclick="itemDel(${index})"><i class="fa-solid fa-trash-can"></i></a>
+                                    <a href="#" onclick="itemDel('${item}')"><i class="fa-solid fa-trash-can"></i></a>
                                     <a href="#"><i class="fa-sharp fa-solid fa-hammer"></i></a>
                                     <a href="#"><i class="fa-solid fa-square-check"></i></a>
                                 </div>
@@ -112,6 +112,12 @@
             listElem.innerHTML = viewList
         }
         viewData()
+
+        function itemDel(item){
+            console.log(item)
+            localStorage.removeItem(item)
+            viewData()
+        }
 
 
 
