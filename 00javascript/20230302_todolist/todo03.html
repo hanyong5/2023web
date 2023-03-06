@@ -28,6 +28,20 @@
         .listView {
             background: pink;
         }
+        .listView ul li{
+            display: flex;
+            padding: 5px 0;
+        }
+        .listView ul li .list{display: flex;align-items: center;padding-left: 10px;}
+        .listView ul li .icon{
+            margin-left: auto;
+            background: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: flex;
+            gap:10px;
+        }
     </style>
 </head>
 
@@ -84,8 +98,15 @@
             console.log(listData)
 
             let viewList = "";
-            listData.forEach(function(item,i){
-                viewList += `<li>${item}</li>`
+            listData.forEach(function(item,index){
+                viewList += `<li>
+                                <div class="list">${item}</div>
+                                <div class='icon'>
+                                    <a href="#" onclick="itemDel(${index})"><i class="fa-solid fa-trash-can"></i></a>
+                                    <a href="#"><i class="fa-sharp fa-solid fa-hammer"></i></a>
+                                    <a href="#"><i class="fa-solid fa-square-check"></i></a>
+                                </div>
+                            </li>`
             })
 
             listElem.innerHTML = viewList
