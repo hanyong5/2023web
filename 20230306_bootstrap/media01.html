@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="../css/reset.css">
     <style>
         .container{width: 1200px;margin: 0 auto;}
-        .hdWrap{padding: 10px 0;background: violet;}
+        .hdWrap{
+            padding: 10px 0;background: violet;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
         .mWrap{display: flex;background: pink;}
         .mWrap h1{width: 100px;text-align: center;}
         .mWrap .nav{
             margin-left: auto;
+        }
+        .mWrap .toggle{
+            display: none;
+            width: 50px;
+            background: #000;
         }
         .mWrap .nav ul{
             display: flex;
@@ -27,6 +37,29 @@
         }
         .mWrap .nav ul li a:hover{
             background: skyblue;
+        }
+
+        .visual{
+            height: 100vh;
+            background-image: url(../images/pc01.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+
+
+        @media screen and ( max-width:768px ) and ( min-width:600px ){
+            .container{width: 100%;}
+            .mWrap .nav ul li{width: 80px;}
+        }
+        @media screen and ( max-width:599px ){
+            .container{width: 100%;}
+            .mWrap .nav{display: none;}
+            .mWrap .toggle{
+                display: block;
+                margin-left: auto;
+            }
         }
     </style>
 </head>
@@ -43,7 +76,9 @@
                     <li><a href="#">menu05</a></li>
                 </ul>
             </div>
+            <div class="toggle"></div>
         </div>
     </div>
+    <div class="visual"></div>
 </body>
 </html>
