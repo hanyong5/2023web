@@ -8,7 +8,40 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .item.done{background: skyblue;}
+        .btn_modi {
+            display: none;
+        }
+
+        .inpWrap,
+        .listView {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .inpWrap {
+            background: skyblue;
+        }
+
+        .listView {
+            background: pink;
+        }
+        .listView ul li{
+            display: flex;
+            padding: 5px 0;
+        }
+        .listView ul li .list{display: flex;align-items: center;padding-left: 10px;}
+        .listView ul li .icon{
+            margin-left: auto;
+            background: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: flex;
+            gap:10px;
+        }
+        .listView ul li .icon a{color:white}
+
+        .item.done{background: blue;}
     </style>
 </head>
 
@@ -28,10 +61,11 @@
     </div>
     <script>
         let listData = [
-            {todo:"자바스크립트1",done:true},
+            {todo:"자바스크립트1",done:false},
             {todo:"자바스크립트2",done:false},
-            {todo:"자바스크립트3",done:true},
+            {todo:"자바스크립트3",done:false},
         ]  
+        
 
         // listData[0].todo
 
@@ -39,6 +73,23 @@
         const btnIpElem = document.querySelector(".btn_input");
         const btnMoElem = document.querySelector(".btn_modi");
         const listElem = document.querySelector(".listView ul");
+
+
+        btnIpElem.addEventListener("click",function(){
+
+            let value = {"todo":inpElem.value,"done":false}
+            
+            if(inpElem.value != ""){
+                listData.push(value);
+                viewData()
+                inpElem.value = ""
+            }else{
+                alert("오늘의 할일을 입력하세요");
+                inpElem.focus()
+            }
+            
+        })
+
 
 
         function viewData(){
@@ -53,9 +104,9 @@
                     viewList += `<li class="item">${item.todo}`
                 }
                 viewList += `<div class="icon">
-                            <a href="javascript:void(0)"><i class="fa-solid fa-trash-can"></i></a>
+                            <a href="javascript:void(0)" onclick="itemDel(${index})"><i class="fa-solid fa-trash-can"></i></a>
                             <a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-hammer"></i></a>
-                            <a href="javascript:void(0)"><i class="fa-solid fa-square-check"></i></a>
+                            <a href="javascript:void(0)" onclick="done(${index})"><i class="fa-solid fa-square-check"></i></a>
                             </div></li>`
                
             })
@@ -67,6 +118,23 @@
             // }
         }
         viewData();
+
+        function itemDel(index){
+            listData.splice(index,1)
+            viewData()
+        }
+
+        function done(index){
+            console.log(index)
+            // if( listData[index].done == true ){
+            //     listData[index].done = false
+            // }else{
+            //     listData[index].done = true
+            // }
+
+            listData[index].done = !listData[index].done;
+            viewData()
+        }
 
     </script>
 </body>
