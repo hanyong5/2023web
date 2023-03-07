@@ -61,15 +61,7 @@
         <button class="btnAllDel" onclick="listAllDell()">전제삭제</button>
     </div>
     <script>
-        let listData = [
-            {todo:"자바스크립트1",done:false},
-            {todo:"자바스크립트2",done:false},
-            {todo:"자바스크립트3",done:false},
-        ]  
-        
-
-        // listData[0].todo
-
+        let listData = []  
         const inpElem = document.querySelector(".inp");
         const btnIpElem = document.querySelector(".btn_input");
         const numElem = document.querySelector(".num");
@@ -79,11 +71,15 @@
         // 입력 
         btnIpElem.addEventListener("click",function(){
 
-            let value = {"todo":inpElem.value,"done":false}
+            let value = {todo:inpElem.value,done:false}
             
             if(inpElem.value != ""){
                 listData.push(value);
-                viewData()
+
+                let valueData = JSON.stringify(listData)
+                localStorage.setItem("todoData",valueData)
+
+                viewData();
                 inpElem.value = ""
             }else{
                 alert("오늘의 할일을 입력하세요");
@@ -99,26 +95,35 @@
             inpElem.value = ""
             btnIpElem.style.display = "inline-block";
             btnMoElem.style.display = "none";
+
+            // localStorage  
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
+            
             viewData()
         })
 
 
 
         function viewData(){
+            if(localStorage.length>0){
+                let localData = localStorage.getItem("todoData");
+                listData = JSON.parse(localData)
+            }
 
             let viewList = "";
             listData.forEach(function(item,index){
                 console.log(item.todo)
 
                 if(item.done == true){
-                    viewList += `<li class="item done">${item.todo}`
+                    viewList += `<li class="item done">${listData[index].todo}`
                 }else{
                     viewList += `<li class="item">${item.todo}`
                 }
                 viewList += `<div class="icon">
                             <a href="javascript:void(0)" onclick="itemDel(${index})"><i class="fa-solid fa-trash-can"></i></a>
                             <a href="javascript:void(0)" onclick="modi('${item.todo}',${index})"><i class="fa-sharp fa-solid fa-hammer"></i></a>
-                            <a href="javascript:void(0)" onclick="done(${index})"><i class="fa-solid fa-square-check"></i></a>
+                            <a href="javascript:void(0)" onclick="done(${index})" class="han"><i class="fa-solid fa-square-check"></i></a>
                             </div></li>`
                
             })
@@ -126,13 +131,20 @@
             listElem.innerHTML = viewList;
 
             // for(let i=0;i<listData.length;i++){
-            //     console.log(listData[i].done)
+            //     console.log(listData[i].todo)
+            // console.log(i)
+
             // }
         }
         viewData();
 
         function itemDel(index){
             listData.splice(index,1)
+
+            // localStorage  
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
+
             viewData()
         }
 
@@ -145,6 +157,11 @@
             // }
 
             listData[index].done = !listData[index].done;
+
+            // localStorage  
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
+
             viewData()
         }
         function modi(todo,index){
@@ -157,6 +174,10 @@
 
         function listAllDell(){
             listData =[];
+
+            // localStorage  
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
             viewData()
         }
 
