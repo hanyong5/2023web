@@ -51,6 +51,7 @@
    <i class="fa-solid fa-square-check"></i> -->
 
     <div class="inpWrap">
+        <input type="hidden" class="num">
         <input type="text" class="inp">
         <button class="btn_input">입력</button>
         <button class="btn_modi">수정</button>
@@ -71,10 +72,11 @@
 
         const inpElem = document.querySelector(".inp");
         const btnIpElem = document.querySelector(".btn_input");
+        const numElem = document.querySelector(".num");
         const btnMoElem = document.querySelector(".btn_modi");
         const listElem = document.querySelector(".listView ul");
 
-
+        // 입력 
         btnIpElem.addEventListener("click",function(){
 
             let value = {"todo":inpElem.value,"done":false}
@@ -88,6 +90,16 @@
                 inpElem.focus()
             }
             
+        })
+
+        // 수정 
+        btnMoElem.addEventListener("click",function(){
+            listData[numElem.value].todo = inpElem.value;
+            listData[numElem.value].done = false;
+            inpElem.value = ""
+            btnIpElem.style.display = "inline-block";
+            btnMoElem.style.display = "none";
+            viewData()
         })
 
 
@@ -105,7 +117,7 @@
                 }
                 viewList += `<div class="icon">
                             <a href="javascript:void(0)" onclick="itemDel(${index})"><i class="fa-solid fa-trash-can"></i></a>
-                            <a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-hammer"></i></a>
+                            <a href="javascript:void(0)" onclick="modi('${item.todo}',${index})"><i class="fa-sharp fa-solid fa-hammer"></i></a>
                             <a href="javascript:void(0)" onclick="done(${index})"><i class="fa-solid fa-square-check"></i></a>
                             </div></li>`
                
@@ -133,6 +145,18 @@
             // }
 
             listData[index].done = !listData[index].done;
+            viewData()
+        }
+        function modi(todo,index){
+            console.log(todo+index)
+            inpElem.value = todo;
+            numElem.value = index;
+            btnIpElem.style.display = "none";
+            btnMoElem.style.display = "inline-block";
+        }
+
+        function listAllDell(){
+            listData =[];
             viewData()
         }
 
