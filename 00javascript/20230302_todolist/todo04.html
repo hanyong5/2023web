@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .item.done{background: skyblue;}
+    </style>
+</head>
+
+<body>
+    <!-- <i class="fa-solid fa-trash-can"></i>
+   <i class="fa-sharp fa-solid fa-hammer"></i>
+   <i class="fa-solid fa-square-check"></i> -->
+
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn_input">입력</button>
+        <button class="btn_modi">수정</button>
+    </div>
+    <div class="listView">
+        <ul></ul>
+        <button class="btnAllDel" onclick="listAllDell()">전제삭제</button>
+    </div>
+    <script>
+        let listData = [
+            {todo:"자바스크립트1",done:true},
+            {todo:"자바스크립트2",done:false},
+            {todo:"자바스크립트3",done:true},
+        ]  
+
+        // listData[0].todo
+
+        const inpElem = document.querySelector(".inp");
+        const btnIpElem = document.querySelector(".btn_input");
+        const btnMoElem = document.querySelector(".btn_modi");
+        const listElem = document.querySelector(".listView ul");
+
+
+        function viewData(){
+
+            let viewList = "";
+            listData.forEach(function(item,index){
+                console.log(item.todo)
+
+                if(item.done == true){
+                    viewList += `<li class="item done">${item.todo}`
+                }else{
+                    viewList += `<li class="item">${item.todo}`
+                }
+                viewList += `<div class="icon">
+                            <a href="javascript:void(0)"><i class="fa-solid fa-trash-can"></i></a>
+                            <a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-hammer"></i></a>
+                            <a href="javascript:void(0)"><i class="fa-solid fa-square-check"></i></a>
+                            </div></li>`
+               
+            })
+
+            listElem.innerHTML = viewList;
+
+            // for(let i=0;i<listData.length;i++){
+            //     console.log(listData[i].done)
+            // }
+        }
+        viewData();
+
+    </script>
+</body>
+
+</html>
