@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Menu Example</title>
+    <style>
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+      }
+      li ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+      }
+      li:hover ul {
+        display: block;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a>
+          <ul>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Location</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact Us</a>
+          <ul>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      // 서브메뉴 데이터를 객체로 정의합니다.
+      const subMenuData = {
+        'About Us': [
+          { text: 'Our Team', url: '#' },
+          { text: 'History', url: '#' },
+          { text: 'Location', url: '#' }
+        ],
+        'Contact Us': [
+          { text: 'Sales', url: '#' },
+          { text: 'Support', url: '#' },
+          { text: 'Feedback', url: '#' }
+        ]
+      };
+
+      // 서브메뉴를 생성하는 함수를 정의합니다.
+      function createSubMenu(parent) {
+        const ul = document.createElement('ul');
+        parent.appendChild(ul);
+
+        const menuText = parent.querySelector('a').textContent;
+        const subMenuItems = subMenuData[menuText];
+
+        subMenuItems.forEach(item => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = item.url;
+          a.textContent = item.text;
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+      }
+
+      // 페이지가 로드되면 서브메뉴를 생성합니다.
+      window.addEventListener('load', () => {
+        const menuItems = document.querySelectorAll('#menu > ul > li');
+        menuItems.forEach(item => {
+          if (item.querySelector('ul')) {
+            return;
+          }
+          const subMenu = createSubMenu(item);
+          item.appendChild(subMenu);
+        });
+      });
+    </script>
+  </body>
+</html>
