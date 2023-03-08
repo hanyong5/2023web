@@ -9,15 +9,38 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         body {
-            background: #ddd;
+            /* background: #ddd; */
         }
-        .visual{
+
+        .visual {
             background-image: url(images/bg-top.jpg);
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
         }
-        .bg-gray{background: #f0f1f4 !important;}
+
+        .bg-gray {
+            background: #f0f1f4 !important;
+        }
+        .bg-pink {
+            background:pink !important;
+        }
+        .banner1 .card{
+            transition:0.3s;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            border:0 none;
+        }
+        .banner1 .card:hover{
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+            transform:translate(-10px,-10px)
+        }
+        .banner2{
+            background-image: url(images/pc01.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
     </style>
 </head>
 
@@ -69,11 +92,11 @@
         </div>
     </div>
     <div class="visual container-fluid py-5 text-left text-md-center text-white">
-       <h1>Lorem, ipsum dolor.</h1>
-       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, veniam.</p>
-       <div class="btn btn-primary d-block d-md-inline-block mb-3">UPLOAD PROJECT</div>
-       <img src="images/drop-icon.png" alt="" class="d-none d-md-block m-auto">
-       <p>Lorem ipsum dolor sit amet.</p>
+        <h1>Lorem, ipsum dolor.</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, veniam.</p>
+        <div class="btn btn-primary d-block d-md-inline-block mb-3">UPLOAD PROJECT</div>
+        <img src="images/drop-icon.png" alt="" class="d-none d-md-block m-auto">
+        <p>Lorem ipsum dolor sit amet.</p>
     </div>
 
     <div class="bg-gray py-5">
@@ -82,16 +105,145 @@
                 <div class="col-md-5 order-2 order-md-1 text-center text-md-start">
                     <h2>Lorem, ipsum dolor.</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, at.</p>
-                    <div class="btn btn-primary">more</div>
+                    <div class="btn btn-primary d-block d-md-inline-block">more</div>
                 </div>
                 <div class="col-md-7 order-1 order-md-2 mb-4 mb-md-0">
-                    <img src="images/symu-panel-1.png" alt="" class="img-fluid">
+                    <img src="images/symu-panel-1.png" alt="" class="img-fluid w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 mb-3 mb-md-0">
+                <img src="images/symu-panel-2.png" alt="" class="w-100">
+            </div>
+            <div class="col-md-5 text-center text-md-start">
+                <h2>Lorem, ipsum dolor.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, at.</p>
+                <div class="btn btn-primary d-block d-md-inline-block">more</div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 order-2 order-md-1 text-center text-md-start">
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, at.</p>
+                    <div class="btn btn-primary d-block d-md-inline-block">more</div>
+                </div>
+                <div class="col-md-7 order-1 order-md-2 mb-4 mb-md-0">
+                    <img src="images/home-panel-3.jpg" alt="" class="img-fluid w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-pink banner1">
+        <div class="container py-5">
+            <div class="wrap text-start text-lg-center ">
+                <h3>GALLERY</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, est!</p>
+            </div>
+            <div class="row">
+                <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="card">
+                        <img src="images/testimg.jpg" class="card-img-top">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="card">
+                        <img src="images/testimg.jpg" class="card-img-top">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="card">
+                        <img src="images/testimg.jpg" class="card-img-top">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="card">
+                        <img src="images/testimg.jpg" class="card-img-top">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div style="height: 2000px;"></div>
+    <div class="banner2">
+        <div class="container py-5">
+            <div class="wrap text-start text-lg-center text-white">
+                <h3>NOTICE</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, est!</p>
+            </div>
+            <div class="row">
+                <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <img src="images/testimg.jpg" class="card-img-bottom">
+                      </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <img src="images/testimg.jpg" class="card-img-bottom">
+                      </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <img src="images/testimg.jpg" class="card-img-bottom">
+                      </div>
+                </div>
+                <div class="col-6 col-lg-3 mb-3 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <img src="images/testimg.jpg" class="card-img-bottom">
+                      </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark py-5">
+        <div class="container text-white text-center text-md-start">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, nisi.
+        </div>
+    </div>
+
+    
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script>
