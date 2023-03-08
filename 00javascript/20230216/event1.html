@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- #1  -->
+    <p onmouseover="this.style.backgroundColor='skyblue'" onmouseout="this.style.backgroundColor='initial'">마우스를 올려주세요
+    </p>
+
+    <!-- #2  -->
+    <p class="box">
+        마우스를 올려주세요
+    </p>
+
+    <script>
+        let boxEl = document.querySelector("body p.box");
+        // boxEl.onmouseover = function(){
+        //     boxEl.style.backgroundColor = "skyblue"
+        // }
+        // boxEl.onmouseout = function(){
+        //     boxEl.style.backgroundColor = "initial"
+        // }
+
+
+        function mouseover() {
+            // boxEl.style.backgroundColor = "skyblue"
+            boxEl.style.border = "1px solid #000"
+            boxEl.style.background = "#ccc"
+        }
+        function mouseout() {
+            // boxEl.style.backgroundColor = "initial"
+            boxEl.style.border = "initial"
+            boxEl.style.background = "initial"
+        }
+
+        boxEl.onmouseover = mouseover;
+        boxEl.onmouseout = mouseout;
+    </script>
+
+
+    <p class="box1">
+        마우스를 올려주세요
+    </p>
+    <script>
+        const box1El = document.querySelector(".box1");
+
+        let width = 100 * 1;
+
+        // box1El.addEventListener("mouseover",function(){
+        //     box1El.style.width = `${width}px`  // width + "px"
+        //     box1El.style.background = "skyblue"
+        // })
+        // box1El.addEventListener("mouseout",function(){
+        //     box1El.style.width = "100%";
+        //     box1El.style.background = "initial"
+        // })
+
+
+        box1El.addEventListener("mouseover", mOver);
+        box1El.addEventListener("mouseout", mOut);
+
+        function mOver() {
+            box1El.style.width = `${width}px`  // width + "px"
+            box1El.style.background = "skyblue"
+        }
+
+        function mOut() {
+            box1El.style.width = "100%";
+            box1El.style.background = "initial"
+        }
+
+    </script>
+</body>
+
+</html>

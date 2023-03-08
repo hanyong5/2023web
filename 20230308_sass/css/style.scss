@@ -1,0 +1,40 @@
+$width:1200px;
+$mColor:skyblue;
+$sColor:pink;
+
+.container{
+    width: $width;
+    margin: 0 auto;
+    display: flex;
+    h1{
+        width: 100px;
+        a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .nav{
+        margin-left: auto;
+        width:600px;
+        ul{
+            display: flex;
+            height: 100%;
+            li{
+                flex-grow: 1;
+                background: red;
+                a{
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background:$mColor;
+                    &:hover{
+                        background: $sColor;
+                    }
+
+                }
+            }
+        }
+    }
+}
