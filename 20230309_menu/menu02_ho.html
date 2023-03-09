@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.css" integrity="sha512-303pOWiYlJMbneUN488MYlBISx7PqX8Lo/lllysH56eKO8nWIMEMGRHvkZzfXYrHj4j4j5NtBuWmgPnkLlzFCg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+
+
+    <style>
+        .navWrap{background-color: #eee;position: relative;z-index: 2;}
+        .navbar{width: 1000px;margin:auto;position: relative;}
+
+
+        .navWrap:hover:after{
+            content:"";display: block;width: 100%;height: 40px;background-color:pink;
+            position: absolute;z-index: 1;
+        }
+        .navWrap:after{display: none;}
+
+
+        .navbar>ul{position: relative;}
+        .navbar>ul>li{float: left;width:200px;height: 40px;}
+        .navbar>ul>li:hover{background-color: #ddd;}
+        .navbar>ul>li>a{display:flex;height: 100%;justify-content: center;align-items: center;}
+
+        .submenu{display: none;position: absolute;height: 40px;z-index:2;}
+        .navbar>ul>li:hover .submenu{display: block;}
+        .submenu li{float: left;background-color:pink;}
+        .submenu li a{display: block;padding: 5px 10px;}
+
+        /* .navbar>ul>li:nth-child(1) .submenu{}
+        .navbar>ul>li:nth-child(2) .submenu{margin-left: -35px;}
+        .navbar>ul>li:nth-child(3) .submenu{margin-left: -35px;}
+        .navbar>ul>li:nth-child(4) .submenu{margin-left: -35px;}
+        .navbar>ul>li:nth-child(5) .submenu{right:0} */
+        .navbar>ul>li:nth-child(1) .submenu{left:calc( 50% - 500px )}
+        .navbar>ul>li:nth-child(2) .submenu{left:calc( 50% - 340px )}
+        .navbar>ul>li:nth-child(3) .submenu{left:calc( 50% - 134px )}
+        .navbar>ul>li:nth-child(4) .submenu{left:calc( 50% + 60x )}
+        .navbar>ul>li:nth-child(5) .submenu{left:calc( 50% + 200px )}
+
+        .visual{height: 500px;background: skyblue;position: relative;}
+
+        .swiper{width: 100%;height: 100%;}
+        .swiper-slide{
+            text-align: center;
+            font-size: 18px;display: flex;
+            justify-content: center;align-items: center;
+        }
+        .slide_item h5{
+            position: absolute;left:50%;
+            
+            animation-duration:1s;
+
+        }
+        @keyframes test1{
+            from{transform:translateY(100px);opacity: 0;}
+            to{transform:translateY(0);opacity: 1;}
+        }
+        .slide_item.swiper-slide-active h5{animation-name:test1;}
+    </style>
+</head>
+<body>
+    <div class="navWrap">
+        <div class="navbar">
+            <ul class="clearfix">
+                <li><a href="#">menu1</a>
+                    <div class="submenu">
+                        <ul class="clearfix">
+                            <li><a href="#">s01_01</a></li>
+                            <li><a href="#">s01_01</a></li>
+                            <li><a href="#">s01_01</a></li>
+                            <li><a href="#">s01_01</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">menu2</a>
+                    <div class="submenu">
+                        <ul class="clearfix">
+                            <li><a href="#">s02_01</a></li>
+                            <li><a href="#">s02_01</a></li>
+                            <li><a href="#">s02_01</a></li>
+                            <li><a href="#">s02_01</a></li>
+                            <li><a href="#">s02_01</a></li>
+                            <li><a href="#">s02_01</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">menu3</a>
+                    <div class="submenu">
+                        <ul class="clearfix">
+                            <li><a href="#">s03_01</a></li>
+                            <li><a href="#">s03_01</a></li>
+                            <li><a href="#">s03_01</a></li>
+                            <li><a href="#">s03_01</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">menu4</a>
+                    <div class="submenu">
+                        <ul class="clearfix">
+                            <li><a href="#">s04_01</a></li>
+                            <li><a href="#">s04_01</a></li>
+                            <li><a href="#">s04_01</a></li>
+                            <li><a href="#">s04_01</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">menu5</a>
+                    <div class="submenu">
+                        <ul class="clearfix">
+                            <li><a href="#">s05_01</a></li>
+                            <li><a href="#">s05_01</a></li>
+                            <li><a href="#">s05_01</a></li>
+                            <li><a href="#">s05_01</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="visual">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide_item">
+                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ratione?</h5>
+                    <img src="../images/pc02.jpg" alt="">
+                  </div>
+              <div class="swiper-slide">
+               
+                <img src="../images/pc02.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../images/pc03.jpg" alt="">
+              </div>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.4/swiper-bundle.min.js" integrity="sha512-Hvn3pvXhhG39kmZ8ue3K8hw8obT4rfLXHE5n+IWNCMkR6oV3cfkQNUQqVvX3fNJO/JtFeo/MfLmqp5bqAT+8qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+</body>
+</html>
