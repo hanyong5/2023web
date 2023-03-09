@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <form>
+       <input type="radio" name="city" value="seoul" checked> 서울
+       <input type="radio" name="city" value="pusan"> 부산
+       <input type="radio" name="city" value="chunchen"> 춘천
+
+       <!-- <br>
+       <input type="radio" name="sex" value="man" checked> 남자
+       <input type="radio" name="sex" value="woman"> 여자
+
+       <br>
+       <input type="checkbox" name="hobby1" value="축구"> 축구
+       <input type="checkbox" name="hobby2" value="야구"> 야구
+       <input type="checkbox" name="hobby3" value="배구"> 배구 -->
+
+       <input type="button" value="클릭하세요" onclick="findCheck()">
+       <!-- <button>클릭하세요</button>
+       <input type="submit" value="전송"> -->
+
+    </form>
+
+    <script>
+        function findCheck(){
+            let found="";
+            let nElem = document.getElementsByName("city")
+            console.log(nElem.length);
+            for(let i=0;i<nElem.length;i++){
+                if(nElem[i].checked == true){
+                    found = nElem[i].value
+                }
+            }
+            console.log(found)
+            document.querySelector(".box").innerHTML = found
+        }
+    </script>
+</body>
+</html>
