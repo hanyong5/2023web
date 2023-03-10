@@ -1,0 +1,26 @@
+.tab {
+  width: 300px;
+  height: 40px;
+}
+.tab ul {
+  height: 100%;
+  display: flex;
+}
+.tab ul li {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: skyblue;
+  cursor: pointer;
+}
+.tab ul li.active {
+  background: pink;
+}
+
+.conWrap div {
+  display: none;
+}
+.conWrap div:nth-child(1) {
+  display: block;
+}/*# sourceMappingURL=style.css.map */

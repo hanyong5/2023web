@@ -1,0 +1,30 @@
+$mColor:skyblue;
+$sColor:pink;
+$width:300px;
+
+.tab{
+    width:$width;
+    height: 40px;
+    ul{
+        height: 100%;
+        display: flex;
+        li{
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $mColor;
+            cursor: pointer;
+            &.active{
+                background: $sColor;
+            }
+        }
+    }
+}
+.conWrap{
+    div{
+        display: none;
+        &:nth-child(1){display: block;}
+    }
+
+}

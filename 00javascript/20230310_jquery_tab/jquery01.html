@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box{
+            background-color: #f00;
+            width: 100px;height: 100px;
+            transition: 0.3s;
+        }
+        .box.big{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button class="bClick">변경</button>
+    <button class="show">보이기</button>
+    <div class="box">
+
+    </div>
+    <script>
+        // $("선택자").css("속성") get
+        // document.querySelector(".box").style.backgroundColor
+
+        // $("선택자").css("속성","값") set
+        // $("선택자").css({"속성":"값","속성":"값"})
+        // $("선택자").addClass()
+        // $("선택자").removeClass()
+        // $("선택자").attr("")
+
+        // console.log($(".box").attr("class"))
+        // $(".box").attr("class","box active")
+
+        // obj.addEventListener("이벤트이름",function(){})
+
+        // $(".bClick").on("click",function(){})
+        $(".bClick").click(function(){
+            // $(".box").css("width","200px")
+            // $(".box").addClass("big")
+            // $(".box").attr("class","box big")
+            // $(".box").hide()
+            // $(".box").fadeOut()
+            $(".box").slideUp(4000,"linear",function(){
+                console.log("up end")
+            })
+        })
+        $(".show").click(function(){
+            // $(".box").show()
+            // $(".box").fadeIn()
+            $(".box").slideDown(1000,"linear")
+        })
+        
+
+    </script>
+</body>
+</html>
