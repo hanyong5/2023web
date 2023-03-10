@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        form{padding: 10px;}
+        fieldset{
+            border: 0 none
+        }
+        .blind{display: block;position: absolute;left: 0;top: -9999px;}
+        .field .inp-field{
+            width: 100%;height: 50px;
+            border: 0 none;
+            border-bottom: 1px solid #ddd;
+            text-indent: 10px;
+            border-radius: 10px;
+        }
+        .field .inp-field:focus{
+            outline: none;
+            background-color:skyblue;
+            color:white
+        }
+        .field .inp-field:focus::placeholder{
+            color:white
+        }
+    </style>
+</head>
+<body>
+    <form action="test.html" method="get">
+        <fieldset>
+            <legend class="blind">회원정보</legend>
+            <div class="field">
+                <label for="username" class="blind">이름</label>
+                <input type="text" name="username" id="username" class="inp-field" placeholder="이름입력">
+                
+            </div>
+            <div class="field">
+                <label for="password" class="blind">비밀번호</label>
+                <input type="password" name="pwd" id="password" class="inp-field" placeholder="비밀번호">
+            </div>
+
+        </fieldset>
+
+    </form>
+</body>
+</html>

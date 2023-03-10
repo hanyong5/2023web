@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naver</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <!-- css  -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <h1><a href="#">네이버</a></h1>
+        </div>
+        <div id="content">
+            <h2 class="blind">네이버회원가입</h2>
+            <div class="join">
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend class="blind">아이디/비밀번호</legend>
+                        <p class="field">
+                            
+                            <label for="user-id" class="blind">아이디</label>
+                            <input type="text" id="user-id" name="userId" placeholder="아이디입력" class="inp-field">
+                            <span class="icon email">@naver.com</span>
+                        </p>
+                        <p class="field">
+                            <label for="user-pass" class="blind">비밀번호</label>
+                            <input type="password" id="user-pass" name="userpass" placeholder="비밀번호입력" class="inp-field">
+                            <span class="icon pass">password</span>
+                        </p>
+                        <p class="field none">
+                            <label for="user-pass2" class="blind">비밀번호확인</label>
+                            <input type="password" id="user-pass2" name="userpass2" placeholder="비밀번호확인" class="inp-field">
+                            <span class="icon pass2">password</span>
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="blind">개인정보</legend>
+                        <p class="field">
+                            <label for="user-name" class="blind">이름</label>
+                            <input type="text" id="user-name" name="userName" class="inp-field w458" placeholder="이름">
+                        </p>
+                        <p class="field radio">
+                            
+                            <input type="radio" id="male" name="user-s" value="남성" checked>
+                            <input type="radio" id="female" name="user-s" value="여성">
+                            
+                            <label for="male" class="btn-label male">남성</label>
+                            <label for="female" class="btn-label female">여성</label>
+
+                        </p>
+                        <p class="field birth clearfix">
+                            <label for="user-birth">생일</label>
+                            <input type="text" id="user-birth" name="userBirth" placeholder="년도(4자)" class="inp-field w130">
+                            <span class="wall">|</span>
+                            <select name="month" class="birMonth">
+                                
+                            </select>
+                            <span class="wall">|</span>
+                            <input type="text" name="day" placeholder="일" class="inp-field w145">
+                        </p>
+                        <p class="field">
+                            <label for="user-cMail" class="blind">본인확인 이메일</label>
+                            <input type="text" id="user-cMail" name="usercMail" class="inp-field w458" placeholder="본인확인 이메일">
+                        </p>
+
+                    </fieldset>
+                    <fieldset>
+                        <legend class="blind">휴대전화인증</legend>
+                        <p class="field confirm clearfix">
+                            <label for="tel1" class="blind">인증번호받기</label>
+                            <select name="tel1" id="tel1" class="telFirst">
+                                <option value="+031">+031</option>
+                                <option value="+032">+032</option>
+                            </select>
+                            <span class="wall">|</span>
+                            <input type="text" name="cellNum" placeholder="휴대전화번호" class="inp-field w202">
+                            <button type="text" class="btn-click btn-primary">인&nbsp;&nbsp;&nbsp;증</button>
+                        </p>
+                        <p class="field">
+                            <label for="tel-confirm" class="blind">인증번호확인</label>
+                            <input type="text" id="tel-confirm" name="telConfirm" placeholder="인증번호" class="inp-field w303">
+                            <button type="text" class="btn-click btn-success">확&nbsp;&nbsp;&nbsp;인</button>
+                        </p>
+                    </fieldset>
+                    <input type="submit" value="가입하기" class="btn-submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let month = '';
+        for(var i=1;i<13;i++){
+           month = month + `<option value="${i}월">${i}월</option>`;
+        }
+
+        document.getElementsByClassName("birMonth")[0].innerHTML = month;
+        // document.querySelector(".birMonth").innerHTML = month;
+            
+       
+
+        
+    </script>
+</body>
+</html>

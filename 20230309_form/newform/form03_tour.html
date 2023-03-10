@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    <style>
+        .slide fieldset{border: 0 none;}
+        .slide .blind{display: block;position: absolute;left: 0;top: -999px;}
+        .slide form{width: 400px;margin: 0 auto}
+        .field label{display: block;padding: 5px 0;}
+        .field select{
+            width: 100%;height: 40px;font-size: 1em;
+            padding: 0 1em;
+            border-radius: 3px;
+        }
+        .field select:focus{outline: none;}
+        .field.date,.field.air{display: flex;position: relative;}
+
+        .field div{width: calc( ( 100% - 10px ) / 2 );}
+        .field div:nth-of-type(1){margin-right: 10px;}
+        .field .inp-field{
+            width: 100%;font-size: 1em;height: 40px;
+            text-align: right;padding: 0 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        .field.date .inp-field:focus{outline: none;}
+
+        
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#sdate,#edate").datepicker({
+                dateFormat: 'yy/mm/dd',
+                prevText: '이전 달',
+                nextText: '다음 달',
+                monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+                dayNames: ['일','월','화','수','목','금','토'],
+                dayNamesShort: ['일','월','화','수','목','금','토'],
+                dayNamesMin: ['일','월','화','수','목','금','토'],
+                showMonthAfterYear: true,
+
+                yearSuffix: '년'
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul class="slide">
+        <li>
+            <form action="#">
+                <fieldset>
+                    <legend class="blind">여행일정</legend>
+                    <div class="field">
+                        <label for="gogo">가고싶은 나라를 선택하세요.</label>
+                        <select name="golo">
+                            <option value="">선택하세요</option>
+                            <option value="일본">일본</option>
+                            <option value="미국">미국</option>
+                        </select>
+                    </div>
+                    <div class="field date">
+                        <div class="left">
+                            <label for="sdate">출발일</label>
+                            <input type="text" id="sdate" class="inp-field">
+                        </div>
+                        <div class="right"> 
+                            <label for="edate">도착일</label>
+                            <input type="text" id="edate" class="inp-field">
+                        </div>
+                       
+                    </div>
+                    <div class="field air">
+                        <div>
+                            <label for="userseat">좌석등급</label>
+                            <select name="userseat" id="userseat">
+                                <option value="최고">최고</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="usernum">인원</label>
+                            <input type="number" name="usernum" id="usernum" class="inp-field">
+                        </div>
+                    </div>
+                </fieldset>
+                <button>검색하기</button>
+            </form>
+        </li>
+
+
+    </ul>
+</body>
+</html>
