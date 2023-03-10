@@ -8,6 +8,7 @@
 fieldset{
     border: 1px solid #dadada;
     background: white;
+    margin-bottom: 10px;
 }
 body{
     background: #eee;
@@ -51,5 +52,31 @@ body{
             &.pass{background-position: 0 -466px;}
             &.pass2{background-position: 0 -515px;}
         }
+        &.radio{
+            height: 49px;
+            .btn-label{
+                display: block;
+                width: 212px;
+                height: 31px;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #ccc;
+                border: 1px solid #dcdcdc;
+                top: 9px;
+                border-radius: 5px;
+                cursor: pointer;
+                &.male{left: 15px;}
+                &.female{right: 15px;}
+            }
+            input{position: absolute;left: 20px;top: 10px;}
+            input:nth-of-type(1):checked ~ label.male{background: pink;}
+            input:nth-of-type(2):checked ~ label.female{background: pink;}
+            
+        }
     }
 }
+
+
+.w458{width: 458px !important;}

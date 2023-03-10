@@ -8,6 +8,7 @@
 fieldset {
   border: 1px solid #dadada;
   background: white;
+  margin-bottom: 10px;
 }
 
 body {
@@ -64,4 +65,42 @@ body {
 }
 #content .field .icon.pass2 {
   background-position: 0 -515px;
+}
+#content .field.radio {
+  height: 49px;
+}
+#content .field.radio .btn-label {
+  display: block;
+  width: 212px;
+  height: 31px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  border: 1px solid #dcdcdc;
+  top: 9px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#content .field.radio .btn-label.male {
+  left: 15px;
+}
+#content .field.radio .btn-label.female {
+  right: 15px;
+}
+#content .field.radio input {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+#content .field.radio input:nth-of-type(1):checked ~ label.male {
+  background: pink;
+}
+#content .field.radio input:nth-of-type(2):checked ~ label.female {
+  background: pink;
+}
+
+.w458 {
+  width: 458px !important;
 }/*# sourceMappingURL=style.css.map */
