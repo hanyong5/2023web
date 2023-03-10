@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .tab li img{display: block;}
+        .tab ul{display: flex;}
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <ul>
+            <li><img src="../../images/btn1_1.jpg" alt=""></li>
+            <li><img src="../../images/btn2_1.jpg" alt=""></li>
+            <li><img src="../../images/btn3_1.jpg" alt=""></li>
+            <li><img src="../../images/btn4_1.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div class="imgWrap">
+        <img src="../../images/spring.jpg" alt="" class="" style="">
+    </div>
+
+    <script>
+        const img = [
+            "spring.jpg",
+            "summer.jpg",
+            "fall.jpg",
+            "winter.jpg"
+        ]
+
+        $(".tab li").click(function(){
+            console.log($(this).index())
+            let i = $(this).index();
+            // $(".imgWrap > img").attr("src","../../images/"+img[i])
+            $(".imgWrap > img").attr("src",`../../images/${img[i]}`)
+        })
+    </script>
+    
+</body>
+</html>
