@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .tab{
+            width: 400px;
+            height:40px
+        }
+        .tab ul{
+            height: 100%;
+            display: flex;
+        }
+        .tab ul li{
+            width:calc( 100% / 3 );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tab li.active{
+            background: skyblue;
+        }
+        .conWrap{
+            width: 400px;
+            height: 167px;
+
+            overflow: hidden;
+            position: relative;
+        }
+        .conWrap ul{
+            display: flex;
+            width: 1200px;
+            position: absolute;
+            left: 0;
+            /* transition: 0.3s; */
+        }
+        .conWrap ul li{width: 400px;}
+        .conWrap ul li img{width: 100%;}
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="tab">
+        <ul>
+            <li class="active">tab1</li>
+            <li>tab2</li>
+            <li>tab3</li>
+        </ul>
+    </div>
+    <div class="conWrap">
+        <ul>
+            <li><img src="../../images/pc01.jpg" alt=""></li>
+            <li><img src="../../images/pc02.jpg" alt=""></li>
+            <li><img src="../../images/pc03.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        $(".tab li").click(function(){
+            let i = $(this).index()
+            $(".tab li").removeClass("active");
+            $(".tab li").eq(i).addClass("active");
+
+            // $(".conWrap ul").css("left",-400*i)
+            $(".conWrap ul").stop().animate({
+                "left":-400*i,
+            },300)
+        })
+    </script>
+</body>
+</html>
