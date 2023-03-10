@@ -1,0 +1,55 @@
+.blind{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -9999px;
+}
+
+fieldset{
+    border: 1px solid #dadada;
+    background: white;
+}
+body{
+    background: #eee;
+}
+
+.wrap{
+    width: 460px;
+    margin: 0 auto;
+}
+
+#header{
+    padding: 60px 0;
+    h1{
+        width: 240px;
+        height: 45px;
+        background-image: url(../images/pc_sp_join.png);
+        background-position: 0 -105px;
+        margin: 0 auto;
+        a{
+            display: block;
+            height: 100%;
+            text-indent: -9999px;
+        }
+    }
+}
+#content{
+    .field{
+        position: relative;
+        .inp-field{
+            width: 350px;height: 40px;
+            border: 0 none;
+            font-size: 16px;text-indent: 16px;
+            outline: none;
+        }
+        .icon{
+            display: block;width: 97px;height: 38px;
+            position: absolute;right: 10px;top: 0;
+            background-image: url(../images/ico_join3.png);
+            text-indent: -9999px;
+            &.email{background-position: 0 -52px;}
+            &.pass{background-position: 0 -466px;}
+            &.pass2{background-position: 0 -515px;}
+        }
+    }
+}
